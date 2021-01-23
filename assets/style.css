@@ -1,12 +1,10 @@
-body {
+.body {
     font-family: 'Oswald', sans-serif;
     font-size: 14px;
     background-color: rgb(77, 139, 115);
   }
 
-.bckImg {
-    background-image: src="./assets/photos/header1.jpg";
-}
+/* .jumbotron {} */
 
 .searchContainer {
     display: block;
@@ -46,14 +44,14 @@ body {
   margin-right: 10px;
   text-align: center;
 }
-
+/* 
 .rain {}
 .wind {}
 .sun {}
 .clouds {}
-.snow {}
+.snow {} */
 
-.red {
+/* .red {
     background-color: rgb(194, 23, 23);
     color: white;
 }
@@ -64,7 +62,7 @@ body {
 
 .yellow {
     background-color: rgb(241, 241, 86);
-}
+} */
 
 .hide {
     display: none;

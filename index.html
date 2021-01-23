@@ -16,20 +16,17 @@
   </head>
 
   
-  <body>
+  <body class="body">
       
     <header class="jumbotron">
-        
       <h1 class="display-5">Weather Dashboard</h1>
-      <!-- <img class="img" alt="four seasons" src="./assets/Photos/header.jpg">  -->
     </header>
     <div class="searchContainer border border-4">
-    <input class="input" placeholder="Search for a city"></input>
-    <button type="button" class="btn btn-info">Submit</button>
+    <input class="input" id="input" placeholder="Search for a city"></input>
+    <button type="button" id="submitBtn" class="btn btn-info">Submit</button>
     <hr>
-    <h5 id="searchHistory">Search history</h5>
-    <p>result1</p>
-    <p>result2</p>
+    <h5>Search history</h5>
+    <div id="listHistory"></div>
     </div>
 
     <div class="dayContainer border border-3">
@@ -53,7 +50,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="library/moment.min.js"></script>
+    <!-- <script src="library/moment.min.js"></script> -->
     <script src="./assets/script.js"></script>
   </body>
 </html>
