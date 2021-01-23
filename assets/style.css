@@ -1,0 +1,71 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    background-color: rgb(77, 139, 115);
+  }
+
+.bckImg {
+    background-image: src="./assets/photos/header1.jpg";
+}
+
+.searchContainer {
+    display: block;
+    padding: 20px;
+    margin: 20px;
+    border: 12px solid black;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.dayContainer {
+    display: block;
+    margin-left: 10px;
+    width: 60%;
+    float: right;
+    margin: 20px;
+    padding: 20px;
+    border: 12px solid black;
+    border-radius: 10px;
+}
+
+.color {
+    color: white;
+    background-color: rgb(22, 22, 102);
+    border: 12px solid rgb(22, 22, 102);
+    border-radius: 10px;
+}
+
+.btn {
+  font-family: 'Oswald', sans-serif;
+  font-size:14px;
+  color:white;
+  background-color: rgb(22, 22, 102);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.rain {}
+.wind {}
+.sun {}
+.clouds {}
+.snow {}
+
+.red {
+    background-color: rgb(194, 23, 23);
+    color: white;
+}
+
+.orange {
+    background-color: rgb(204, 75, 28);
+}
+
+.yellow {
+    background-color: rgb(241, 241, 86);
+}
+
+.hide {
+    display: none;
+}
