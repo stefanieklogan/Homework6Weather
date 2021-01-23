@@ -1,31 +1,36 @@
 var searchHistoryArr = [];
+var userInput = "";
+var APIKey = "3758324bb7cc715bc0076675d23131b9";
 
-$('#submitBtn').click(function(e) {
-    e.preventDefault();
+$('#submitBtn').click(function(event) {
+    event.preventDefault();
     var userInput = $("#input").val();
     (searchHistoryArr).unshift(userInput);
     var historyDiv = $("<div>");
     $("#listHistory").prepend(historyDiv);
     $("#listHistory").prepend(userInput);
     saveLS();
+    var queryCity = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&appid=3758324bb7cc715bc0076675d23131b9";
+
+    $.ajax({
+        url: queryCity,
+        method: "GET"
+    }) 
+    .then(function (response) {
+        console.log(response);
+    })
 })
 
 function saveLS() {
     localStorage.setItem("searchHistoryArr", JSON.stringify(searchHistoryArr));
 }
 
-function renderDash() {
-    // searchHistoryArr.forEach(function (search) {
-    // var newDiv = document.createElement("<div>");
-    // newDiv.textContent = search;
-    // listHistoryEl.appendChild(newDiv);
-    // }
-    // {
-    // var historyDiv = $("<div>");
-    // historyDiv = $("searchHistoryArr[i]").val();
-    // $("#listHistory").prepend(historyDiv);
-    // }
-}
+// function renderDash() {
+//   for (var i = 0; i < searchHistoryArr.length; i++) {
+//     var newDiv = $("<div>");
+//     newDiv = $("searchHistoryArr[i]").val();
+//     $("#listHistory").prepend(newDiv);
+// }}
 
 function pullLS() {
     var lastSearch = JSON.parse(localStorage.getItem("searchHistoryArr"));
@@ -35,3 +40,4 @@ function pullLS() {
     }
     renderDash();
 }
+
