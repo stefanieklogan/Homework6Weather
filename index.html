@@ -4,15 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
-  <link rel="stylesheet" href="./assets/style.css" />
-    <title>Weather</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Weather Anywhere</title>
   </head>
 
   
@@ -21,6 +19,7 @@
     <header class="jumbotron">
       <h1 class="display-5">Weather Dashboard</h1>
     </header>
+    <div class="row">
     <div class="searchContainer border border-4">
     <input class="input" id="input" placeholder="Search for a city"></input>
     <button type="button" id="submitBtn" class="btn btn-info">Submit</button>
@@ -31,18 +30,34 @@
 
     <div class="dayContainer border border-3">
         <h3 id="cityNameResult" class="color">City name here</h3>
-        <div class="row present">
-            <div class="col-6">Today's date</div>
-            <div class="col-6"><img>weather Icon</div>
+        <div class="row">
+            <div class="col-6" id="now">Today's date</div>
+            <div class="col-6" id="dayIcon"><img>weather Icon</div>
         </div>
         <br>
         <div class="row" id="weather">
-            <div class="col-3" id="temp">Temp Here</div>
-            <div class="col-3" id="humid">humid Here</div>
-            <div class="col-3" id="wind">wind Here</div>
-            <div class="col-3" id="UV">UV Here</div>
+            <div class="col-2.2 col" id="temp">Temp Here</div>
+            <div class="col-2.2 col" id="humid">humid Here</div>
+            <div class="col-2.2 col" id="wind">wind Here</div>
+            <div class="col-2.2 col" id="UV">UV Here
+            <!-- <button id="UVBtn" class = "btn btn-info"></button> -->
+            </div>
         </div>
         </div>
+    </div>
+
+    <div class="fiveDayContainer border border-3">
+      <h3 id="fiveDay" class="color">Five Day forecast</h3>
+      <div class="row future">
+        <div class="col-2.2 col" id="dayOne">day1</div>
+        <div class="col-2.2 col" id="dayTwo">day2</div>
+        <div class="col-2.2 col" id="dayThree">day3</div>
+        <div class="col-2.2 col" id="dayFour">day4</div>
+        <div class="col-2.2 col" id="dayFive">day5</div>
+      </div>
+
+
+    </div>
 
 
 
@@ -50,7 +65,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="library/moment.min.js"></script> -->
+    <script src=".assets/moment.min.js"></script>
     <script src="./assets/script.js"></script>
   </body>
 </html>

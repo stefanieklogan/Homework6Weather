@@ -4,10 +4,12 @@
     background-color: rgb(77, 139, 115);
   }
 
-/* .jumbotron {} */
+.jumbotron {
+    display: flex;
+    justify-content: center;
+}
 
 .searchContainer {
-    display: block;
     padding: 20px;
     margin: 20px;
     border: 12px solid black;
@@ -23,6 +25,26 @@
     margin: 20px;
     padding: 20px;
     border: 12px solid black;
+    border-radius: 10px;
+}
+
+.fiveDayContainer {
+    display: block;
+    /* margin-left: 10px; */
+    width: 60%;
+    float: right;
+    margin: 20px;
+    padding: 20px;
+    border: 12px solid black;
+    border-radius: 10px;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgb(240, 225, 225);
     border-radius: 10px;
 }
 
@@ -51,7 +73,7 @@
 .clouds {}
 .snow {} */
 
-/* .red {
+.red {
     background-color: rgb(194, 23, 23);
     color: white;
 }
@@ -62,7 +84,7 @@
 
 .yellow {
     background-color: rgb(241, 241, 86);
-} */
+}
 
 .hide {
     display: none;
