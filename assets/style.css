@@ -1,4 +1,4 @@
-.body {
+body, .body {
     font-family: 'Oswald', sans-serif;
     font-size: 14px;
     background-color: rgb(77, 139, 115);
@@ -39,6 +39,10 @@
     border-radius: 10px;
 }
 
+.city {
+    font-size: 20px;
+}
+
 .col {
     display: flex;
     justify-content: center;
@@ -66,25 +70,62 @@
   margin-right: 10px;
   text-align: center;
 }
-/* 
-.rain {}
-.wind {}
-.sun {}
-.clouds {}
-.snow {} */
 
-.red {
+.UVBtnMild {
+    font-family: 'Oswald', sans-serif;
+    font-size:14px;
+    background-color: rgb(241, 241, 86);
+    height: 24px;
+    text-align: center;
+  }
+
+  .UVBtnModerate {
+    font-family: 'Oswald', sans-serif;
+    font-size:14px;
+    background-color: rgb(180, 76, 57);
+    height: 24px;
+    text-align: center;
+  }
+
+  .UVBtnSevere {
+    font-family: 'Oswald', sans-serif;
+    font-size:14px;
     background-color: rgb(194, 23, 23);
     color: white;
-}
+    height: 24px;
+    text-align: center;
+  }  
 
-.orange {
-    background-color: rgb(204, 75, 28);
-}
+    /* 
+    if (responseIcon === "Rain") {
+    .addClass("fas fa-cloud-rain");
+    }
 
-.yellow {
-    background-color: rgb(241, 241, 86);
-}
+    else if (responseIcon === "snow") {
+     .addClass("fas fa-snowman");
+    }
+    
+    else if (responseIcon === "wind") {
+     .addClass("fas fa-wind");
+    }
+
+    else if (responseIcon === "sun") {
+    .addClass("fas fa-sun");
+    }
+
+    else if (responseIcon === "Clear") {
+    .addClass("fas fa-moon");
+    }
+
+    else if (responseIcon === "Clouds") {
+    .addClass("fas fa-cloud");
+    }
+
+    else {
+    .addClass("fas fa-rainbow");
+    }
+ */
+
 
 .hide {
     display: none;

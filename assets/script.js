@@ -24,19 +24,19 @@ $('#submitBtn').click(function(event) {
     var tempF = (response.main.temp - 273.15) * 1.80 + 32;
     // var now = moment().format('L');
     $("#cityNameResult").text(response.name);
-    // $("#dayIcon").text(response.weather.[i].main);
+    // $("#dayIcon").text(response.weather.array[0].main);
     // $("#now").text(now);
     $("#temp").text("Temp: " + tempF.toFixed(1) + "⁰ F");
     $("#humid").text("Humidity: " + response.main.humidity + "%");
     $("#wind").text("Wind: " + response.wind.speed + " MPH");
     $("#UV").text("UV index: ");
-    var UV = 65;
-    var btn = $("<button>");
-    btn.addClass("UVBtn");
+    // var UV = 65;
+    // var btn = $("<button>");
+    // btn.addClass("UVBtn");
 
-    if (UV < 70) {
-        $(".UVBtn").addClass("yellow");
-    }
+    // if (UV < 70) {
+    //     $(".UVBtn").addClass("yellow");
+    // }
     // else if (UV > 89) {
     //     $(".UVBtn").addClass("red");
     // }
@@ -44,8 +44,8 @@ $('#submitBtn').click(function(event) {
     //     $(".UVBtn").addClass("orange");
     // }
     
-    btn.text(UV);
-    $("#UV").append(btn);
+    // btn.text(UV);
+    // $("#UV").append(btn);
     })
 })
 
