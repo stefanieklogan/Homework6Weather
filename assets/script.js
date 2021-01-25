@@ -69,3 +69,6 @@ function pullLS() {
     renderDash();
 }
 
+$('#clearBtn').click(function(event) {
+    $("#listHistory").empty();
+})

@@ -4,14 +4,27 @@ body, .body {
     background-color: rgb(77, 139, 115);
   }
 
-.jumbotron {
+.colu {
+    font-size: 25px;
+    margin-bottom: 0;
+    margin: 2px;
+}
+
+.gray {
+    color: darkgray;
+}
+
+.headerArt {
     display: flex;
     justify-content: center;
+
 }
 
 .searchContainer {
+    display: block;
     padding: 20px;
     margin: 20px;
+    float: center;
     border: 12px solid black;
     border-radius: 10px;
     width: 30%;
@@ -20,7 +33,7 @@ body, .body {
 .dayContainer {
     display: block;
     margin-left: 10px;
-    width: 60%;
+    width: 50%;
     float: right;
     margin: 20px;
     padding: 20px;
@@ -59,7 +72,7 @@ body, .body {
     border-radius: 10px;
 }
 
-.btn {
+#submitBtn {
   font-family: 'Oswald', sans-serif;
   font-size:14px;
   color:white;
@@ -70,6 +83,17 @@ body, .body {
   margin-right: 10px;
   text-align: center;
 }
+
+#clearBtn {
+    font-family: 'Oswald', sans-serif;
+    font-size:14px;
+    color:white;
+    background-color: rgb(22, 22, 102);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+  }
 
 .UVBtnMild {
     font-family: 'Oswald', sans-serif;

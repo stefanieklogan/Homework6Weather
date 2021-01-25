@@ -18,7 +18,27 @@
   <body class="body">
       
     <header class="jumbotron">
-      <h1 class="display-5">Weather Dashboard</h1>
+      <div class="row headerArt">
+        <div class="col-1 colu gray fas fa-cloud-rain"></div>
+        <div class="col-1 colu gray fas fa-wind"></div>
+        <div class="col-1 colu gray fas fa-sun"></div>
+        <div class="col-1 colu gray fas fas fa-rainbow"></div>
+        <div class="col-1 colu gray fas fa-cloud"></div>
+        <div class="col-1 colu gray fas fa-moon"></div>
+        <div class="col-1 colu gray fas fa-snowflake"></div>
+    </div>
+    <div class="row">
+      <h1 class="headerArt">Weather Dashboard</h1>
+    </div>
+    <div class="row headerArt">
+        <div class="col-1 colu gray fas fa-cloud-rain"></div>
+        <div class="col-1 colu gray fas fa-wind"></div>
+        <div class="col-1 colu gray fas fa-sun"></div>
+        <div class="col-1 colu gray fas fas fa-rainbow"></div>
+        <div class="col-1 colu gray fas fa-cloud"></div>
+        <div class="col-1 colu gray fas fa-moon"></div>
+        <div class="col-1 colu gray fas fa-snowflake"></div>
+    </div>
     </header>
     <div class="row">
     <div class="searchContainer border border-4">
@@ -28,9 +48,14 @@
     </button>
     <hr>
     <div class="row">
-    <div class="fas fa-city city px-3"></div><h5>Search history</h5>
+    <h5 class="col-8">Search history</h5>
+    <div class="col-4">
+      <button id="clearBtn" class="btn btn-info">
+      <div class="fas fa-trash"></div>
+    </button></div>
     </div>  
     <div id="listHistory"></div>
+    
     </div>
 
     <div class="dayContainer border border-3">
@@ -43,8 +68,11 @@
         <div class="row" id="weather">
             <div class="col-2.2 col" id="temp">Temp Here</div>
             <div class="col-2.2 col" id="humid">humid Here</div>
+        </div>
+        <div class="row">
             <div class="col-2.2 col" id="wind">wind Here</div>
             <div class="col-2.2 col" id="UV">UV Here<button id="UVBtn" class="ml-2"></button>
+            </div>
             </div>
         </div>
         </div>
