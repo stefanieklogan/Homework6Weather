@@ -20,13 +20,13 @@
 <a name="overview"></a>
 ## Project overview
 
-As a user, I want to be able to freely search cities across the globe for timely weather data. The website should allow me to type my desired city and render on any device. 
+* As a user, I want to be able to freely search cities across the globe for timely weather data. The website should allow me to type my desired city and render on any device. 
 
-When I search for a city, I am presented with today's weather and a 5-day forecast. Today's forecast features several data-points including temperature, wind and humidity. Today's date & an icon representing the weather is also listed.
+* When I search for a city, I am presented with today's weather and a 5-day forecast. Today's forecast features several data-points including temperature, wind and humidity. Today's date & an icon representing the weather is also listed.
 
-The 5-day forecast is comprehensive with icons to match future weather as well as projected temp & humidity data-points.
+* The 5-day forecast is comprehensive with icons to match future weather as well as projected temp & humidity data-points.
 
-My search history is mine to control. It will reload when I return. I am able to clear history when I desire.
+* My search history is mine to control. It will reload when I return. I am able to clear history when I desire.
 
 <a name="psuedo"></a>
 ## Psuedo code

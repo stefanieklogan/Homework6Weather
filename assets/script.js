@@ -1,6 +1,6 @@
 var searchHistoryArr = [];
 var userInput = "";
-var APIKey = "3758324bb7cc715bc0076675d23131b9";
+var APIKey = "&appid=3758324bb7cc715bc0076675d23131b9";
 
 
 $('#submitBtn').click(function(event) {
@@ -11,25 +11,105 @@ $('#submitBtn').click(function(event) {
     $("#listHistory").prepend(historyDiv);
     $("#listHistory").prepend(userInput);
     saveLS();
-    var queryCity = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&appid=3758324bb7cc715bc0076675d23131b9";
-
+    var queryURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + userInput + APIKey;
+       
     $.ajax({
-        url: queryCity,
+        url: queryURL,
         method: "GET"
     }) 
     .then(function (response) {
         console.log(response);
+        var lat = response[0].lat;
+        var lon = response[0].lon;
+        var city = response[0].name;
+        $("#cityNameResult").text(city);
+        console.log(lat);
+        console.log(lon);
+
+    queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts" + APIKey;
+
+    
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }) 
+    .then(function (response) {
+        console.log(response);
+    //Transfer content to HTML
+   
+    $("#now").text(response.current.dt);  
+    var tempF = (response.current.temp - 273.15) * 1.80 + 32;
+    $("#temp").text("Temp: " + tempF.toFixed(1) + "⁰ F");
+    $("#humid").text("Humidity: " + response.current.humidity + "%");
+    $("#wind").text("Wind: " + response.current.weather[0].wind_speed + " MPH");
+    var responseUV = response.current.uvi;
+    console.log(responseUV);
+    $("#UVBtn").text(response.current.uvi);
+    if (responseUV < 3) {
+        $("#UVBtn").addClass("UVBtnMild");
+        }
+
+    else if (responseUV > 7) {
+        $("#UVBtn").addClass("UVBtnSevere");
+    }
+
+    else {
+        $("#UVBtn").addClass("UVBtnModerate");
+    }
+    
+        // else if (dayIconText === "Snow") {
+        // $(".dayIcon").addClass("fas fa-snowman");
+        // }
+        
+        // else if (dayIconText === "Wind") {
+        // $(".dayIcon").addClass("fas fa-wind");
+        // }
+    var dayIconText = response.current.weather[0].main;
+    console.log(dayIconText);
+    if (dayIconText === "Rain") {
+        $(".dayIcon").addClass("fas fa-cloud-rain");
+        }
+    
+        else if (dayIconText === "Snow") {
+        $(".dayIcon").addClass("fas fa-snowman");
+        }
+        
+        else if (dayIconText === "Wind") {
+        $(".dayIcon").addClass("fas fa-wind");
+        }
+    
+        else if (dayIconText === "Sun") {
+        $(".dayIcon").addClass("fas fa-sun");
+        }
+    
+        else if (dayIconText === "Clear") {
+        $(".dayIcon").addClass("fas fa-moon");
+        }
+    
+        else if (dayIconText === "Clouds") {
+        $(".dayIcon").addClass("fas fa-cloud");
+        }
+
+        else if (dayIconText === "Mist") {
+            $(".dayIcon").addClass("fas fa-smog");
+            }
+    
+        else {
+        $(".dayIcon").addClass("fas fa-rainbow");
+        }
+    })
+    
 
     //Transfer content to HTML
-    var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-    // var now = moment().format('L');
-    $("#cityNameResult").text(response.name);
-    // $("#dayIcon").text(response.weather.array[0].main);
-    // $("#now").text(now);
-    $("#temp").text("Temp: " + tempF.toFixed(1) + "⁰ F");
-    $("#humid").text("Humidity: " + response.main.humidity + "%");
-    $("#wind").text("Wind: " + response.wind.speed + " MPH");
-    $("#UV").text("UV index: ");
+    
+    
+    
+    
+    
+    
+    // $("#humid").text("Humidity: " + response.main.humidity + "%");
+    // $("#wind").text("Wind: " + response.wind.speed + " MPH");
+    // $("#UV").text("UV index: ");
     // var UV = 65;
     // var btn = $("<button>");
     // btn.addClass("UVBtn");
