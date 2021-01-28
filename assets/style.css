@@ -4,11 +4,11 @@ body, .body {
     background-color: rgb(77, 139, 115);
   }
 
-.colu {
+/* .colu {
     font-size: 25px;
     margin-bottom: 0;
     margin: 2px;
-}
+} */
 
 .gray {
     color: darkgray;
