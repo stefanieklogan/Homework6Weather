@@ -87,62 +87,27 @@ $('#submitBtn').click(function(event) {
         }
 
     //Show icon based on overall desc of today's weather
-    var dayIconText = response.current.weather[0].main;
-    console.log(dayIconText);
-        if (dayIconText === "Rain") {$(".dayIcon").addClass("fas fa-cloud-rain");
-        }
-    
-        else if (dayIconText === "Snow") {$(".dayIcon").addClass("fas fa-snowman");
-        }
-        
-        else if (dayIconText === "Wind") {$(".dayIcon").addClass("fas fa-wind");
-        }
-    
-        else if (dayIconText === "Sun") {$(".dayIcon").addClass("fas fa-sun");
-        }
-    
-        else if (dayIconText === "Clear") {$(".dayIcon").addClass("fas fa-moon");
-        }
-    
-        else if (dayIconText === "Clouds") {$(".dayIcon").addClass("fas fa-cloud");
-        }
-    
-        else {$(".dayIcon").addClass("fas fa-rainbow");
-        }
-
+    var dayIcon = response.current.weather[0].icon;
+    var dayIconURL = "http://openweathermap.org/img/w/" + dayIcon + ".png";
+    console.log(dayIconURL);
+    $("#dayIcon").attr("src", dayIconURL);
+                            
     //Five day forecast
   
     for (var i = 1; i < 6; i++) {
         var fiveDayDate = new Date(response.daily[i].dt*1000).toLocaleDateString();
-        var fiveDayIcon = response.daily[i].weather[0].main;
+        var fiveDayIcon = response.daily[i].weather[0].icon;
+        var fiveDayIconURL = "http://openweathermap.org/img/w/" + fiveDayIcon + ".png";
         var fiveDayTemp = (((response.daily[i].temp.max - 273.15) * 1.80 + 32).toFixed(1) + "⁰ F");
         var fiveDayHumid = (response.daily[i].humidity + "%");
         
         var col = $("<div>").addClass("col-2 col colFive d-flex flex-column");
-
-        if (fiveDayIcon === "Rain") {col.addClass("fas fa-cloud-rain");
-        }
-    
-        else if (fiveDayIcon === "Snow") {col.addClass("fas fa-snowman");
-        }
+        var img = $("<img>");
+        col.append(img);
+        img.attr("src", fiveDayIconURL);        
         
-        else if (fiveDayIcon === "Wind") {col.addClass("fas fa-wind");
-        }
-    
-        else if (fiveDayIcon === "Sun") {col.addClass("fas fa-sun");
-        }
-    
-        else if (fiveDayIcon === "Clear") {col.addClass("fas fa-moon");
-        }
-    
-        else if (fiveDayIcon === "Clouds") {col.addClass("fas fa-cloud");
-        }
-    
-        else {col.addClass("fas fa-rainbow");
-        }
-        
-        
-        col.append(fiveDayDate, "<br>", fiveDayIcon, "<br>", fiveDayTemp, "<br>",fiveDayHumid);
+        col.append(fiveDayDate, "<br>", fiveDayTemp, "<br>",fiveDayHumid);
+        img.append(fiveDayIconURL);
         $(".fiveDayRow").append(col);
     }
    
