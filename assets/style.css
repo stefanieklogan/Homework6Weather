@@ -43,13 +43,17 @@ body, .body {
 
 .fiveDayContainer {
     display: block;
-    /* margin-left: 10px; */
     width: 60%;
     float: right;
     margin: 20px;
     padding: 20px;
     border: 12px solid black;
     border-radius: 10px;
+}
+
+.float {
+    float:right;
+    margin: 10px;
 }
 
 .city {
@@ -64,6 +68,7 @@ body, .body {
     border: 1px solid rgb(240, 225, 225);
     border-radius: 10px;
 }
+
 
 .color {
     color: white;
