@@ -9,11 +9,11 @@ function renderDash() {
     var div = $("<div>");
 //Display to page
     $(div).text(searchHistoryArr[i].val());
-    console.log(div);
     $("#listHistory").prepend(div);
 }}
 
 function pullLS() {
+//Pull from lS for data
     var lastSearch = JSON.parse(localStorage.getItem("searchHistoryArr"));
     if (searchHistoryArr !== null) {
         lastSearch = searchHistoryArr;
@@ -28,6 +28,7 @@ function saveLS() {
 }
 
 $('#clearBtn').click(function(event) {
+//Allow user to empty their search info on-screen
     $("#listHistory").empty();
 })
 
@@ -40,8 +41,10 @@ $('#submitBtn').click(function(event) {
     $("#listHistory").prepend(historyDiv);
     $("#listHistory").prepend(userInput);
     saveLS();
+    //Prepare for additional searches - remove data classes not related to future API responses
     $("#dayIcon").removeClass();
     $(".colFive").remove();
+    //Set up class again
     $("#dayIcon").addClass("col-6 dayIcon");
  
 
@@ -49,10 +52,12 @@ $('#submitBtn').click(function(event) {
     var queryURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + userInput + APIKey;
        
     $.ajax({
+        //Use city input and call for lat & lon data to use in second API
         url: queryURL,
         method: "GET"
     }) 
     .then(function (response) {
+    
         console.log(response);
         var lat = response[0].lat;
         var lon = response[0].lon;
@@ -63,6 +68,7 @@ $('#submitBtn').click(function(event) {
     queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts" + APIKey;
     
     $.ajax({
+        //Use lat & lon for weather API
         url: queryURL,
         method: "GET"
     }) 
@@ -70,9 +76,8 @@ $('#submitBtn').click(function(event) {
         console.log(response);
 
     //Transfer content to HTML
-    
+    //Current weather rendering
    $("#now").text(new Date().toLocaleDateString());
-   
     $("#temp").text("Temp: " + ((response.current.temp - 273.15) * 1.80 + 32).toFixed(1) + "⁰ F");
     $("#humid").text("Humidity: " + response.current.humidity + "%");
     $("#wind").text("Wind: " + response.current.wind_speed + " mph");
@@ -95,7 +100,6 @@ $('#submitBtn').click(function(event) {
     $("#dayIcon").attr("src", dayIconURL);
                             
     //Five day forecast
-  
     for (var i = 1; i < 6; i++) {
         var fiveDayDate = new Date(response.daily[i].dt*1000).toLocaleDateString();
         var fiveDayIcon = response.daily[i].weather[0].icon;
@@ -115,10 +119,10 @@ $('#submitBtn').click(function(event) {
         $(".fiveDayContainer").removeClass("hide");
     }
    
-        //second call function///////////////////////////////
+ 
     })
-        //first call function///////////////////////////////////
+       
     })
-        //on click function/////////////////////////////////
+       
 })
 
