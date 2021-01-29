@@ -36,14 +36,16 @@
 <a name="code"></a>
 ## Building the code & Java
 
-* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+* This project brought together a lot of learnings in the last six weeks from local storage, to API, page rendering and more. I continue to learn more and push myself when debugging code that I thought would work.
 
 <a name="proud"></a>
 ## What I'm proud of most
 
 * I am proud of figuring out icons and font awesome! I learned that a font from another site (google) will negatively impact an icon because it's not in the font family the text resides in. If any of that makes sense, I'm better at this coding stuff than I give myself credit for. The magnifying glass on the submit button element was the issue. After being able to create an icon in another random spot in the html, I had to dig deeper. I cannot tell you what exactly I did, but something triggered me to realize it's the font family that's holding me back from rendering the icon of my dreams. 
 
-* xxxxxxxxxxxxxxxxxxxxxxxx
+* I am proud of figuring out font awesome icons were the wrong way to go! I heard from peers in casual exchange they were using the icon provided in the API. After I was having challenges with if statements and the fact "clear" can be at 12 pm and 12 am, I looked into the API's icons. I'm proud that I figured out I needed an < img > element to host the source info after using the < div > did not cut it. I was able to optimize a lot of code this way.
+
+* I also used a for loop in the five-day forecast. I learned that 
 
 * xxxxxxxxxxxxxxxxxxxx
 

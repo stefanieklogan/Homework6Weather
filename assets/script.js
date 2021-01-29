@@ -2,27 +2,30 @@ var searchHistoryArr = [];
 var userInput = "";
 var APIKey = "&appid=3758324bb7cc715bc0076675d23131b9";
 
-function saveLS() {
-    localStorage.setItem("searchHistoryArr", JSON.stringify(searchHistoryArr));
-}
-
 function renderDash() {
   for (var i = 0; i < searchHistoryArr.length; i++) {
-    var newDiv = $("<div>");
-    newDiv = $(("searchHistoryArr[i]").val());
-    $("#listHistory").prepend(newDiv);
+
+//Create new li for each index
+    var div = $("<div>");
+//Display to page
+    $(div).text(searchHistoryArr[i].val());
+    console.log(div);
+    $("#listHistory").prepend(div);
 }}
 
 function pullLS() {
     var lastSearch = JSON.parse(localStorage.getItem("searchHistoryArr"));
     if (searchHistoryArr !== null) {
         lastSearch = searchHistoryArr;
-        console.log(lastSearch);
+        renderDash();
     }
-    renderDash();
 }
 
 pullLS();
+
+function saveLS() {
+    localStorage.setItem("searchHistoryArr", JSON.stringify(searchHistoryArr));
+}
 
 $('#clearBtn').click(function(event) {
     $("#listHistory").empty();
@@ -89,7 +92,6 @@ $('#submitBtn').click(function(event) {
     //Show icon based on overall desc of today's weather
     var dayIcon = response.current.weather[0].icon;
     var dayIconURL = "http://openweathermap.org/img/w/" + dayIcon + ".png";
-    console.log(dayIconURL);
     $("#dayIcon").attr("src", dayIconURL);
                             
     //Five day forecast
@@ -99,7 +101,7 @@ $('#submitBtn').click(function(event) {
         var fiveDayIcon = response.daily[i].weather[0].icon;
         var fiveDayIconURL = "http://openweathermap.org/img/w/" + fiveDayIcon + ".png";
         var fiveDayTemp = (((response.daily[i].temp.max - 273.15) * 1.80 + 32).toFixed(1) + "⁰ F");
-        var fiveDayHumid = (response.daily[i].humidity + "%");
+        var fiveDayHumid = (response.daily[i].humidity + "% humidity");
         
         var col = $("<div>").addClass("col-2 col colFive d-flex flex-column");
         var img = $("<img>");
@@ -109,6 +111,8 @@ $('#submitBtn').click(function(event) {
         col.append(fiveDayDate, "<br>", fiveDayTemp, "<br>",fiveDayHumid);
         img.append(fiveDayIconURL);
         $(".fiveDayRow").append(col);
+        $(".dayContainer").removeClass("hide");
+        $(".fiveDayContainer").removeClass("hide");
     }
    
         //second call function///////////////////////////////

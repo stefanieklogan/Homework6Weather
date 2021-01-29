@@ -4,20 +4,13 @@ body, .body {
     background-color: rgb(77, 139, 115);
   }
 
-/* .colu {
-    font-size: 25px;
-    margin-bottom: 0;
-    margin: 2px;
-} */
-
 .gray {
     color: darkgray;
 }
 
-.headerArt {
+.headerArt, .jumbotron {
     display: flex;
     justify-content: center;
-
 }
 
 .searchContainer {
@@ -43,7 +36,7 @@ body, .body {
 
 .fiveDayContainer {
     display: block;
-    width: 60%;
+    width: 80%;
     float: center;
     margin: 20px;
     padding: 20px;
@@ -68,7 +61,6 @@ body, .body {
     border: 1px solid rgb(240, 225, 225);
     border-radius: 10px;
 }
-
 
 .color {
     color: white;
@@ -106,6 +98,8 @@ body, .body {
     background-color: rgb(241, 241, 86);
     height: 24px;
     text-align: center;
+    border: 2px solid navy;
+    border-radius: 10px;
   }
 
   .UVBtnModerate {

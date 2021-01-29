@@ -28,8 +28,8 @@
         <div class="col-1 colu gray fas fa-moon"></div>
         <div class="col-1 colu gray fas fa-snowflake"></div>
     </div>
-    <div class="row">
-      <h1 class="headerArt">Weather Dashboard</h1>
+    <div class="row ">
+      <h1 class="headerArt text-center">Weather Dashboard</h1>
     </div>
     <div class="row headerArt">
         <div class="col-1 colu gray fas fa-cloud-rain"></div>
@@ -40,6 +40,7 @@
         <div class="col-1 colu gray fas fa-moon"></div>
         <div class="col-1 colu gray fas fa-snowflake"></div>
     </div>
+  
     </header>
     <div class="row">
     <div class="searchContainer border border-4">
@@ -59,13 +60,14 @@
   </div>
   
 
-    <div class="dayContainer border border-3">
+    <div class="dayContainer border border-3 hide">
         <h3 id="cityNameResult" class="color">City name here</h3>
         <div class="row">
             <div class="col-6" id="now">Today's date</div>
-            <div class="col-6 dayIcon"><img id="dayIcon"></div>
         </div>
-        <br>
+        <div class="row">
+          <div class="col-6 dayIcon"><img id="dayIcon"></div>
+      </div>
         <div class="row" id="weather">
             <div class="col-2.2 col" id="temp">Temp Here</div>
             <div class="col-2.2 col" id="humid">humid Here</div>
@@ -79,7 +81,7 @@
         </div>
     </div>
  
-   <div class="fiveDayContainer border border-3">
+   <div class="fiveDayContainer border border-3 hide">
       <h3 id="fiveDay" class="color">Five Day forecast</h3>
       <div class="row future fiveDayRow" id="fiveDay">
       </div>
