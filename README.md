@@ -15,7 +15,9 @@
 
 * Click here: https://stefanieklogan.github.io/Homework6Weather/
 
-![Homepage image](xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+![Homepage image1](https://github.com/stefanieklogan/Homework6Weather/blob/main/assets/Photos/homepage1.JPG)
+
+![Homepage image1](https://github.com/stefanieklogan/Homework6Weather/blob/main/assets/Photos/homepage2.JPG)
 
 <a name="overview"></a>
 ## Project overview
@@ -26,7 +28,7 @@
 
 * The 5-day forecast is comprehensive with icons to match future weather as well as projected temp & humidity data-points.
 
-* My search history is mine to control. It will reload when I return. I am able to clear history when I desire.
+* My search history is mine to control. I am able to clear history when I desire.
 
 <a name="psuedo"></a>
 ## Psuedo code
@@ -43,11 +45,7 @@
 
 * I am proud of figuring out icons and font awesome! I learned that a font from another site (google) will negatively impact an icon because it's not in the font family the text resides in. If any of that makes sense, I'm better at this coding stuff than I give myself credit for. The magnifying glass on the submit button element was the issue. After being able to create an icon in another random spot in the html, I had to dig deeper. I cannot tell you what exactly I did, but something triggered me to realize it's the font family that's holding me back from rendering the icon of my dreams. 
 
-* I am proud of figuring out font awesome icons were the wrong way to go! I heard from peers in casual exchange they were using the icon provided in the API. After I was having challenges with if statements and the fact "clear" can be at 12 pm and 12 am, I looked into the API's icons. I'm proud that I figured out I needed an < img > element to host the source info after using the < div > did not cut it. I was able to optimize a lot of code this way.
-
-* I also used a for loop in the five-day forecast. I learned that 
-
-* xxxxxxxxxxxxxxxxxxxx
+* I am proud of figuring out font awesome icons were the wrong way to go re weather stuff! I heard from peers in casual exchange were using the icon provided in the API. After I was having challenges with if statements and the fact "clear" can be API data at 12 pm and 12 am, I looked into the API's icons. I'm proud that I figured out I needed an < img > element to host the source info after using the < div > did not cut it. I was able to optimize a lot of code this way.
 
 <a name="learnings"></a>
 ## Additional learnings
@@ -57,6 +55,8 @@
 * You have to dig for your data responses sometimes. I knew what weather icons I had available to me, but I didn't know how the weather response would look. Is it "cloudy" in Cleveland? Is it "clouds" in Cleveland. I searched several cities to see what their weather responses looked like. Knowing what the data response looked like allowed me to code the if statement to pluck the right icon. #showmetheclouds #clearresponseisamoonlitnight
 
 * I look forward to using font awesome icons at work. We have a support desk site with a repository of self-help articles we hope our audience reads. We use icons to catch their eye and enhance user experience. FA allows for a lot of variety and creativity vs creating icon from scratch.
+
+* I tried to render search history from local storage but I just could not get the code to work correctly. I tried several videos, articles and looked back and numerous local storage activities in-class. I must have made a small error that I cannot see past.
 
 <a name="streetcred"></a>
 ## The other stuff: License & Badges
