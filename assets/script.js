@@ -49,7 +49,7 @@ $('#submitBtn').click(function(event) {
  
 
     //Establish URL for call #1 to acquire lon & lat values based on city name
-    var queryURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + userInput + APIKey;
+    var queryURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + userInput + APIKey;
        
     $.ajax({
         //Use city input and call for lat & lon data to use in second API
